@@ -1,0 +1,22 @@
+@{
+	var word = ViewData["Word"] as string ?? string.Empty;
+	var found = ViewData["Found"] as bool? ?? false;
+	var song = ViewData["Song"] as string ?? string.Empty;
+	var track = ViewData["TrackNumber"] as int? ?? 0;
+}
+
+<div class="card">
+	<div class="card-body">
+		@if (found)
+		{
+			<h3>@song</h3>
+			<p>
+				<a href="/track/@track">Play it</a>
+			</p>
+		}
+		else
+		{
+			<h3>No track matches @word</h3>
+		}
+	</div>
+</div>

@@ -1,0 +1,24 @@
+@{
+	var n = (int)ViewData["TrackNumber"];
+	var song = (string)ViewData["Song"];
+	var hasPrev = (bool)ViewData["HasPrev"];
+	var hasNext = (bool)ViewData["HasNext"];
+	var prev = (int)ViewData["Prev"];
+	var next = (int)ViewData["Next"];
+}
+
+<div class="card">
+	<div class="card-body">
+		<h3>Track @n: @song</h3>
+		<div>
+			@if (hasPrev)
+			{
+				<a href="/track/@prev">Prev</a>
+			}
+			@if (hasNext)
+			{
+				<a href="/track/@next" style="margin-left:12px;">Next</a>
+			}
+		</div>
+	</div>
+</div>
